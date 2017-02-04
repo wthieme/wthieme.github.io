@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+<style>
+* {
+ font-size: 100%;
+ font-family: Verdana,Geneva,sans-serif;
+ color: #006064;
+}
+
+html, body {
+  height: 100%;
+  min-height: 100%; /* for firefox */
+}
+
+body {
+    background-color:#A9E2F3;
+    height: 100%;
+    min-height: 100%;
+    box-sizing: border-box;
+    padding: 1%;
+    margin: 0px;
+}
+
+div.message {
+    background:#FFF;
+    border:1px solid #DDD;
+    border-radius:5px;
+    box-shadow:5px 5px 5px Gray;
+    margin:20px auto;
+    width:100%;
+    padding:10px;
+    font-size: 20px;
+    text-align: left;
+    box-sizing: border-box;
+}
+
+div.players{
+    display: none;
+    box-shadow: 5px 5px 5px Gray;
+    margin: 10px;
+    font-size: 22px;
+    float:left;
+    text-align:center;
+    background-color:#b3ffb3;
+    min-width:20%;
+    min-height:100px;
+    max-height:100px;
+    max-width:30%;
+    position: relative;
+    padding:10px;
+    border-radius:10px;
+    border: 1px solid #9494b8;
+}
+
+span.name{
+    display:block;
+    font-size:26px;
+    font-weight:bold;
+}
+
+span.role{
+    display: block;
+}
+
+span.correct{
+    font-size:32px;
+    font-weight:bold;
+    bottom:10px;
+    left: 0px;
+    position: absolute;
+    margin-left:10px;
+    display: block;
+}
+
+span.points{
+    display: block;
+    bottom:10px;
+    right: 0px;
+    font-size:28px;
+    position: absolute;
+    background:lightgreen;
+    border-radius:20px;
+    padding-left:10px;
+    padding-right:10px;
+    box-shadow: 5px 5px 5px Gray;
+    font-style:italic; 
+    margin-right:10px;
+}
+    
+</style>
+  <title>The spy game</title>
+</head>
+
+<body>
+        
+	<div style="width:100%;height:100%;overflow:hidden; box-shadow:0px 0px 10px Black;">
+		<div style="float:left;width:55%;height:100%;">
+			<div style="width:35%;height:240px;background:#c2c2d6;float:left;box-sizing:border-box;">
+            
+                <img style="display:none;width:240px; height:240px" id="imgspy" src="pictures/Spy.png" alt="spy">
+            
+            </div>
+			<div style="background:#CEECF5; padding-top:10px; padding-left:10px; width:65%; height:240px; float:left;padding:10px;box-sizing:border-box;">
+                
+    	       <span style="font-size: 48px; display:none; font-weight: bold; text-shadow: 2px 2px #aaaaaa;" id="tsg">The Spy Game</span><br>
+                <span style="font-size: 24px; display:none;" id="status">Status</span><br><br>
+                <span style="font-size: 36px; display:none; font-weight: bold; text-shadow: 2px 2px #aaaaaa;" id="time">00:00</span><br><br>
+                <span style="font-size: 24px; display:none;" id="spy">Spy</span><br>
+	           <span style="font-size: 24px; display:none;" id="loc">Location</span><br>
+            
+        </div>
+			
+			<div style="clear:both"></div>
+			<div style='width:100%;background:#CEF6D8;height:100%;padding:10px;box-sizing:border-box;'>
+
+                <div class="players" id="divp1">
+				    <span class="name" id="name1"></span>
+				    <span class="role" id="rol1"></span>
+                    <span class="correct" id="cor1"></span>
+                    <span class="points" id="pts1"></span>
+                </div>
+                <div class="players" id="divp2">
+                    <span class="name" id="name2"></span>
+                    <span class="role" id="rol2"></span>
+                    <span class="correct" id="cor2"></span>
+                    <span class="points" id="pts2"></span>
+                </div>
+                <div class="players" id="divp3">
+                    <span class="name" id="name3"></span>
+                    <span class="role" id="rol3"></span>
+                    <span class="correct" id="cor3"></span>
+                    <span class="points" id="pts3"></span>
+                </div>
+                <div class="players" id="divp4">
+                    <span class="name" id="name4"></span>
+                    <span class="role" id="rol4"></span>
+                    <span class="correct" id="cor4"></span>
+                    <span class="points" id="pts4"></span>
+                </div>
+                <div class="players" id="divp5">
+                    <span class="name" id="name5"></span>
+                    <span class="role" id="rol5"></span>
+                    <span class="correct" id="cor5"></span>
+                    <span class="points" id="pts5"></span>
+                </div>
+                <div class="players" id="divp6">
+                    <span class="name" id="name6"></span>
+                    <span class="role" id="rol6"></span>
+                    <span class="correct" id="cor6"></span>
+                    <span class="points" id="pts6"></span>
+                </div>
+                <div class="players" id="divp7">
+                    <span class="name" id="name7"></span>
+				    <span class="role" id="rol7"></span>
+                    <span class="correct" id="cor7"></span>
+                    <span class="points" id="pts7"></span>
+                </div>
+                <div class="players" id="divp8">
+                    <span class="name" id="name8"></span>
+				    <span class="role" id="rol8"></span>
+                    <span class="correct" id="cor8"></span>
+                    <span class="points" id="pts8"></span>
+                </div>
+                <div class="players" id="divp9">
+                    <span class="name" id="name9"></span>
+                    <span class="role" id="rol9"></span>
+                    <span class="correct" id="cor9"></span>
+                    <span class="points" id="pts9"></span>
+                </div>                
+            </div>
+        </div>		
+        
+	   <div id = "divmsg" style="display:none; width:45%;height:100%;background:#ECF6CE;float:left;position:relative;overflow:hidden">
+		
+           <div style="position:absolute;bottom:0px;left:0px;right:0px;width:100%;text-align:center;padding:0px 30px;box-sizing:border-box;">
+            <div id="msg10" class="message" style="display:none">
+				<span style="float:left;font-weight:bold;" id="ttl10"></span>
+				<span style="float:right;" id="dt10"></span> 
+				<div style="clear:both"></div>
+				<span style="font-style:italic; margin-left:20px" id="txt10"></span>									
+			</div>
+			<div id="msg9" class="message" style="display:none">
+				<span style="float:left;font-weight:bold;" id="ttl9"></span>
+				<span style="float:right;" id="dt9"></span> 
+				<div style="clear:both"></div>
+				<span style="font-style:italic;" id="txt9"></span>									
+			</div>
+			<div id="msg8" class="message" style="display:none">
+				<span style="float:left;font-weight:bold;" id="ttl8"></span>
+				<span style="float:right;" id="dt8"></span> 
+				<div style="clear:both"></div>
+				<span style="font-style:italic;" id="txt8"></span>									
+			</div>
+			<div id="msg7" class="message" style="display:none">
+				<span style="float:left;font-weight:bold;" id="ttl7"></span>
+				<span style="float:right;" id="dt7"></span> 
+				<div style="clear:both"></div>
+				<span style="font-style:italic;" id="txt7"></span>									
+			</div>
+			<div id="msg6" class="message" style="display:none">
+				<span style="float:left;font-weight:bold;" id="ttl6"></span>
+				<span style="float:right;" id="dt6"></span> 
+				<div style="clear:both"></div>
+				<span style="font-style:italic;" id="txt6"></span>									
+			</div>
+			<div id="msg5" class="message" style="display:none">
+				<span style="float:left;font-weight:bold;" id="ttl5"></span>
+				<span style="float:right;" id="dt5"></span> 
+				<div style="clear:both"></div>
+				<span style="font-style:italic;" id="txt5"></span>									
+			</div>
+			<div id="msg4" class="message" style="display:none">
+				<span style="float:left;font-weight:bold;" id="ttl4"></span>
+				<span style="float:right;" id="dt4"></span> 
+				<div style="clear:both"></div>
+				<span style="font-style:italic;" id="txt4"></span>									
+			</div>
+			<div id="msg3" class="message" style="display:none">
+				<span style="float:left;font-weight:bold;" id="ttl3"></span>
+				<span style="float:right;" id="dt3"></span> 
+				<div style="clear:both"></div>
+				<span style="font-style:italic;" id="txt3"></span>									
+			</div>
+			<div id="msg2" class="message" style="display:none">
+				<span style="float:left;font-weight:bold;" id="ttl2"></span>
+				<span style="float:right;" id="dt2"></span> 
+				<div style="clear:both"></div>
+				<span style="font-style:italic;" id="txt2"></span>									
+			</div>
+			<div id="msg1" class="message" style="display:none">
+				<span style="float:left;font-weight:bold;" id="ttl1"></span>
+				<span style="float:right;" id="dt1"></span> 
+				<div style="clear:both"></div>
+                <span style="font-style:italic;" id="txt1"></span>				
+			</div>
+			</div>
+		</div>		
+	</div>
+
+    <audio id="tsgaudio">
+      <source id="tsgsource" src="sounds/clock.mp3" type="audio/mp3"> 
+    </audio>
+        
+    <script src="//www.gstatic.com/cast/sdk/libs/receiver/2.0.0/cast_receiver.js"></script>
+	
+    <script>    
+    $(document).ready(function(){
+        $("#imgspy").fadeIn(Math.random()*5000);
+        $("#tsg").fadeIn(Math.random()*5000);
+        $("#status").fadeIn(Math.random()*5000);
+        $("#time").fadeIn(Math.random()*5000);
+        $("#loc").fadeIn(Math.random()*5000);
+        $("#spy").fadeIn(Math.random()*5000);
+        $("#divmsg").fadeIn(Math.random()*5000);
+
+        //playsoundjs("sounds/clock.mp3", true);
+        //playsound("sounds/clock.mp3", true);
+        //playsound("sounds/dingdong.mp3", false);
+        //playsound("sounds/timesup.mp3", false);
+        //stopsound();
+        
+    }); 
+        
+	window.onload = function() {
+        cast.receiver.logger.setLevelValue(0);
+        window.castReceiverManager = cast.receiver.CastReceiverManager.getInstance();
+        console.log('Starting Receiver Manager');
+
+        // handler for the 'ready' event
+        castReceiverManager.onReady = function(event) {
+          console.log('Received Ready event: ' + JSON.stringify(event.data));
+          window.castReceiverManager.setApplicationState("Application status is ready...");
+        };
+
+        // handler for 'senderconnected' event
+        castReceiverManager.onSenderConnected = function(event) {
+        console.log('Received Sender Connected event: ' + event.data);
+
+        console.log(window.castReceiverManager.getSender(event.data).userAgent);
+        };
+
+
+        // handler for 'senderdisconnected' event
+        castReceiverManager.onSenderDisconnected = function(event) {
+        console.log('Received Sender Disconnected event: ' + event.data);
+
+        if (window.castReceiverManager.getSenders().length == 0) {
+	        window.close();
+	      }
+        };
+
+        // handler for 'systemvolumechanged' event
+
+	castReceiverManager.onSystemVolumeChanged = function(event) {
+        console.log('Received System Volume Changed event: ' + event.data['level'] + ' ' +
+        event.data['muted']);
+        };
+
+        // create a CastMessageBus to handle messages for a custom namespace
+        window.messageBus = window.castReceiverManager.getCastMessageBus(
+              'urn:x-cast:nl.whitedove.thespygame');
+
+        // handler for the CastMessageBus message event
+        window.messageBus.onMessage = function(event) {
+		console.log('Message [' + event.senderId + ']: ' + event.data);
+
+	    // display the message from the sender
+		displayText(event.data);
+
+		// inform all senders on the CastMessageBus of the incoming message event
+		// sender message listener will be invoked
+        window.messageBus.send(event.senderId, event.data);
+        }
+
+        // initialize the CastReceiverManager with an application status message
+        window.castReceiverManager.start({statusText: "Application is starting"});
+        console.log('Receiver Manager started');
+      };
+
+    function displayText(text) {
+		if (text.substring(0,3)=="ct:") {
+			document.getElementById("time").style.color=text.substring(3);
+			}
+		else if (text.substring(0,3)=="tv:") {
+            var nval=text.substring(3);
+            var oval=$("#time").text();
+            if (oval != nval) {
+                $("#time").fadeOut(150);
+                $("#time").text(nval);
+                $("#time").fadeIn(150);
+                }
+            }
+		else {
+			obj = JSON.parse(text);
+            var nstatus=obj.status.substring(0,4);
+            var ostatus=$("#status").text().substring(0,4);
+
+            if (ostatus != "Runn" && nstatus == "Runn"){
+                //playsound("sounds/clock.mp3", true);
+            }
+
+            if (ostatus != "Wait" && nstatus == "Wait"){
+                //playsound("sounds/dingdong.mp3", false);
+            }
+
+            if (ostatus != "Fini" && nstatus == "Fini"){
+                //playsound("sounds/timesup.mp3", false);
+            }
+
+            
+            $("#loc").text(obj.loc);
+            $("#loc").hide().fadeIn(1000);
+			$("#spy").text(obj.spy);
+            $("#spy").hide().fadeIn(1000);
+			$("#status").text(obj.status);
+            $("#status").hide().fadeIn(1000);
+			for (i = 0; i < 9; i++) { 
+				var s = (i+1).toString();
+				var name = obj["name"+s];
+				if (name) {
+					$("#divp"+s).hide().fadeIn(1000);
+					$("#name"+s).text(name);
+                    $("#rol"+s).text(obj["rol"+s]);
+				    var cor = obj["cor"+s];
+				    var pts = obj["pts"+s];
+                    playerscore(s,cor,pts);                			
+				}
+				else {
+					$("#divp"+s).hide();
+				}
+			}
+
+			for (i = 0; i < 10; i++) { 
+				var s = (i+1).toString();
+				var ttl = obj["ttl"+s];
+				if (ttl) {
+					$("#msg"+s).show();
+					$("#ttl"+s).text(ttl);
+					$("#dt"+s).text(obj["dt"+s]);
+					$("#txt"+s).text(obj["txt"+s]);
+				}
+				else {
+					$("#msg"+s).hide();
+				}
+			}
+		}
+		window.castReceiverManager.setApplicationState(text);
+	}
+
+    function fadePlayers() {
+        $("#divp1").fadeIn(Math.random()*5000);
+        $("#divp2").fadeIn(Math.random()*5000);
+        $("#divp3").fadeIn(Math.random()*5000);
+        $("#divp4").fadeIn(Math.random()*5000);
+        $("#divp5").fadeIn(Math.random()*5000);
+        $("#divp6").fadeIn(Math.random()*5000);
+        $("#divp7").fadeIn(Math.random()*5000);
+        $("#divp8").fadeIn(Math.random()*5000);
+        $("#divp9").fadeIn(Math.random()*5000);
+        }
+        
+    function playsound(sourceUrl, loopend){
+        var audio = $("#tsgaudio");      
+        audio[0].pause();
+        $("#tsgsource").attr("src", sourceUrl);
+        audio[0].load();
+        audio.prop('loop', loopend);
+        audio[0].play();        
+        }
+        
+    function stopsound(){
+        var audio = $("#tsgaudio");      
+        audio[0].pause();
+        }
+
+    function playerscore(nr,cor,pts) {
+        $("#cor"+nr).hide().text(cor).fadeIn(1000);
+        playerpts(nr,cor,pts);
+    }
+
+    function playerpts(nr,cor,pts) {
+        var opts = $("#pts"+nr);
+        opts.hide();
+        if (cor=="+1")
+        {
+            opts.css("background","lightgreen");
+        }
+        else if (cor=="-") {
+            opts.css("background","darksalmon");
+        }			
+		else {
+            opts.css("background","PaleGreen");
+        }
+        opts.text(pts).fadeIn(1000);
+    }
+    
+    </script>
+  </body>
+</html>
