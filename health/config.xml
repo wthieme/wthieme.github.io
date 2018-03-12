@@ -1,4 +1,4 @@
-O<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <!-- Config file voor de Health Android App. Deze config file zelf wordt niet gebruikt door het server gedeelte (de webservice health dus)-->
   <ZorgNedInfo>
   <Omgevingen>
