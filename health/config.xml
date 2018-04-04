@@ -17,6 +17,5 @@
     <Omgeving>https://steenbergen.zorgned.nl/prod/health/api/health</Omgeving>
     <Omgeving>https://voerendaal.zorgned.nl/prod/health/api/health</Omgeving>
     <Omgeving>https://wijkbijduurstede.zorgned.nl/prod/health/api/health</Omgeving>
-    <Omgeving>https://zeist.zorgned.nl/prod/health/api/health</Omgeving>
-  </Omgevingen>
+   </Omgevingen>
 </ZorgNedInfo>
