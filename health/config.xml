@@ -2,10 +2,11 @@
 <!-- Config file voor de Health Android App. Deze config file zelf wordt niet gebruikt door het server gedeelte (de webservice health dus)-->
   <ZorgNedInfo>
   <Omgevingen>
+    <Omgeving>https://a2.zorgned.nl/prod/health/api/health</Omgeving>
     <Omgeving>https://ameland.zorgned.nl/prod/health/api/health</Omgeving>
     <Omgeving>https://bunnik.zorgned.nl/prod/health/api/health</Omgeving>
-    <Omgeving>https://demo.zorgned.nl/prod/health/api/health</Omgeving>
     <Omgeving>https://delft.zorgned.nl/prod/health/api/health</Omgeving>
+    <Omgeving>https://demo.zorgned.nl/prod/health/api/health</Omgeving>
     <Omgeving>https://h10inkoop.zorgned.nl/prod/health/api/health</Omgeving>
     <Omgeving>https://heuvelrug.zorgned.nl/prod/health/api/health</Omgeving>
     <Omgeving>https://hoekschewaard.zorgned.nl/prod/health/api/health</Omgeving>
@@ -13,9 +14,11 @@
     <Omgeving>https://molenwaard.zorgned.nl/prod/health/api/health</Omgeving>
     <Omgeving>https://oudewater.zorgned.nl/prod/health/api/health</Omgeving>
     <Omgeving>https://over-gemeenten.zorgned.nl/prod/health/api/health</Omgeving>
+    <Omgeving>https://peelgemeenten.zorgned.nl/prod/health/api/health</Omgeving>
+    <Omgeving>https://simpelveld-voerendaal.zorgned.nl/prod/health/api/health</Omgeving>
     <Omgeving>https://ssd-zuid-limburg.zorgned.nl/prod/health/api/health</Omgeving>
     <Omgeving>https://steenbergen.zorgned.nl/prod/health/api/health</Omgeving>
-    <Omgeving>https://voerendaal.zorgned.nl/prod/health/api/health</Omgeving>
     <Omgeving>https://wijkbijduurstede.zorgned.nl/prod/health/api/health</Omgeving>
+    <Omgeving>https://zuidoost-utrecht.zorgned.nl/prod/health/api/health</Omgeving>
    </Omgevingen>
 </ZorgNedInfo>
